@@ -32,7 +32,7 @@
 
 ## Компоненты
 
-<img src="./design/architecture/history_path.excalidraw.svg" height="400">
+<img src="./design/architecture/environment.excalidraw.svg" height="400">
 
 ## Модель данных
 
