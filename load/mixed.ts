@@ -7,8 +7,10 @@ const targetUrl = __ENV.TARGET_URL ?? 'http://nginx:8080';
 const scenario = (name: string, rate: number, startTime: string) => ({
   executor: 'constant-arrival-rate',
   exec: name,
-  rate,
-  timeUnit: '1s',
+  // k6 requires an integer rate; express fractional requests per second
+  // as an integer number of requests over a longer interval.
+  rate: Math.round(rate * 1000),
+  timeUnit: '1000s',
   duration: profile.stand.duration,
   startTime,
   preAllocatedVUs: 20,
