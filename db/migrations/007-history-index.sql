@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS trip_passenger_id_created_at ON trips (passenger_id, created_at DESC);
